@@ -1,0 +1,45 @@
+TEMA3 - PCOM - BIVOLARU ANDRA TEODORA 323CA - README
+
+-- parson.c si parson.h
+    Used for the parsing of JSON objects the parson library, got from the link in the
+homework. Used the JSON value and object to create the object sent to the server and also
+used a serilizes string to send the json object as a string to the server.
+
+-- request.c request.h
+    Used the request files from the 10th laboratory, also adding the DELETE command , which
+is exactly the GET function, changed the get request to a delete one.
+
+-- helpers.c helpers.h buffer.c buffer.h
+    Helpers and buffer files from the 10th laboratory.
+
+-- Makefile
+    Compiles the client and all the other files needed for the client, also having a clean command.
+
+--client.c
+    Code's source main where the commands are given from stdin and the requests to the
+server are made.
+    
+    -- registerClient()
+        This function makes the POST request to register the client with a username
+    and a password into the system. At the end, it prints if the command had any errors or not.
+    
+    -- login()
+        This function sends a POST request to the server for a client to login, and at the end
+    prints a message if the command had any errors or not. Also, it extracts the cookie
+    from the server's response.
+
+    -- enter_library()
+        This function sends a GET command to the server and extracts
+    from the server's response the token to be used for next commands.
+
+    -- get_books()
+        Sends a get request with the parameters mentioned in the assignment
+    and prints all the books
+
+    -- get_book()
+        Same as get_books, but gets the id and puts in the requests.
+
+    -- add_book() applies a put request on the server, parsing the JSON
+    -- delete_book() applies a delete request on the id.
+
+    -- logout() also a get request.
